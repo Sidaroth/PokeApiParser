@@ -1,4 +1,4 @@
-# Retrieveing select data from "https://pokeapi.co/" for all pokemon for use in spreadsheets/Databases. 
+# Retrieving select data from "https://pokeapi.co/" for all pokemon for use in spreadsheets/Databases. 
 # Author: Sidaroth (Last edit: 2016-03-15)
 # Copyright 2016 Christian Holt
 # Requires: requests, csv --> Use (python -m pip install requests) to install requests if necessary. 
