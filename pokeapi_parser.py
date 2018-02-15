@@ -292,7 +292,7 @@ class Parser:
 		for thread in cacheThreads:
 			thread.join()
 
-		assert len(self.typeCache) == 18
+		assert len(self.typeCache) == NUMBER_OF_TYPES
 
 		## Main program
 		print("Running...")
