@@ -1,6 +1,6 @@
 # Retrieving select data from "https://pokeapi.co/" for all pokemon for use in spreadsheets/Databases. 
 # Author: Sidaroth (Last edit: 2021-05-25)
-# Copyright 2016 Christian Holt
+# Copyright 2021 Christian Holt
 # Requires: requests, csv --> Use (python -m pip install requests) to install requests if necessary. 
 
 from output import GetCSV, GetConsoleString
