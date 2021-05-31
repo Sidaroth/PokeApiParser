@@ -7,7 +7,7 @@
 # - Resistances
 # - Locations (in which game)
 
-class Pokedata:
+class Pokemon:
     """Model for all pokemon data"""
 
     def __init__(self):
@@ -19,6 +19,8 @@ class Pokedata:
         self.immunities = []			# Immunities (typename)
         self.resistances = []			# Resistances (typename)
         self.locations = []				# encounter locations (i.e pallet-town(yellow, red, blue))
+        self.species = ""               # breed species
+        self.eggGroups = []             # egg groups for breeding
 
         # Types
     def AddType(self, type):
@@ -54,15 +56,13 @@ class Pokedata:
     def GetImmunities(self):
         return self.immunities
 
-        # Encounter Locations
-
+        ## Encounter Locations
     def AddLocation(self, location):
         self.locations.append(location)
 
     def GetLocations(self):
         return self.locations
 
-        ## GET/SET ##
     def SetName(self, name):
         self.name = name
 
@@ -74,6 +74,19 @@ class Pokedata:
 
     def GetDexId(self):
         return self.dexId
+
+        ## Breeding
+    def SetSpecies(self, species):
+        self.species = species
+
+    def GetSpecies(self):
+        return self.species
+
+    def AddEggGroup(self, group):
+        self.eggGroups.append(group)
+
+    def GetEggGroups(self):
+        return self.eggGroups
 
         ## Sort ##
     def SortImmunities(self):

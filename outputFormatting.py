@@ -4,6 +4,8 @@ def GetCSV(pokemon):
     resistanceString = ""
     immunityString = ""
     locationString = ""
+    eggString = ""
+    speciesString = ""
 
     i = len(pokemon.GetTypes())
     for pokeType in pokemon.GetTypes():
@@ -50,6 +52,16 @@ def GetCSV(pokemon):
             if i > 0:
                 locationString += ","
 
+    i = len(pokemon.GetEggGroups())
+    if i > 0:
+        for group in pokemon.GetEggGroups():
+            i -= 1
+            eggString += group
+            if i > 0:
+                eggString += ","
+
+    speciesString += pokemon.GetSpecies()
+
     csv = {
         'DexId': pokemon.GetDexId(),
         'Name': pokemon.GetName(),
@@ -58,6 +70,8 @@ def GetCSV(pokemon):
         'Resistances': resistanceString,
         'Immunities': immunityString,
         'Locations': locationString,
+        'Species': speciesString,
+        'EggGroups': eggString,
     }
 
     return csv
@@ -69,6 +83,8 @@ def GetConsoleString(pokemon):
         pokemon.GetName() + " is of type(s): "
     for types in pokemon.GetTypes():
         string += types['name'] + ", "
+
+    string += " (species: " + pokemon.GetSpecies() +") "
 
         # Weaknesses
     string += "and is weak against: "
@@ -89,5 +105,10 @@ def GetConsoleString(pokemon):
     string += " and can be found: "
     for location in pokemon.GetLocations():
         string += location + ", "
+
+    string += "\n. Egg Groups: ("
+    for group in pokemon.GetEggGroups():
+        string += group + ", "
+    string +=")"
 
     return string
